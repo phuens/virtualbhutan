@@ -1,8 +1,14 @@
-<!DOCTYPE html>
+import os
+
+
+
+f = open("gallery_generated.html", "w+")
+f.write(
+        """<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title> VR: Nature Walk</title>
+    <title> Gallery</title>
     <link rel="icon" type="image/png" href="../images/icons/kenya.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -52,7 +58,7 @@
 
                             <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                                 <li><a href="../index.html">Home</a></li>
-                                <li class=" has-children active">
+                                <li class=" has-children">
                                     <a href="https://phuens.github.io/Watson/gallery_templates/gallery.html">VR
                                         Expereinces</a>
                                     <ul class="dropdown">
@@ -63,7 +69,7 @@
 
                                     </ul>
                                 </li>
-                                <li class="">
+                                <li class="active">
                                     <a href="https://phuens.github.io/Watson/Books/books.html">Gallery</a>
                                 </li>
                             </ul>
@@ -112,11 +118,24 @@
                     <div class="col-md-7">
                         <div class="row mb-5">
                             <div class="col-12 ">
-                                <h2 class="site-section-heading text-center">Nature Walk</h2>
+                                <h2 class="site-section-heading text-center">Gallery</h2>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="row" id="lightgallery">
+        """
+        )
+directory = "/Users/phuntsho/Desktop/Projects/virtual_bhutan/virtualbhutan/images/gallery"
+
+for filename in os.listdir(directory):
+     if filename.endswith(".jpg"):
+        print("----> ", filename)
+        f.write("""<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade" 
+                    data-src="../images/gallery/{src}" data-sub-html="<a href="#"> <img src="../images/gallery/{src}" alt="{src}" class="img-fluid"></a>
+                    </div>""".format(src=filename))
+
+f.write("""</div>
             </div>
         </div>
         <!-----------------------------------------------------------------------------------------------
@@ -143,4 +162,8 @@
         </script>
 </body>
 
-</html>
+</html>""")
+f.close()
+print("done writing it.")
+
+
