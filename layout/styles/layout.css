@@ -12,6 +12,14 @@ File: Layout CSS
 @import url("fontawesome-free/css/fontawesome-all.min.css");
 @import url("framework.css");
 
+/*---------  C U S T O M   C S S   A D D E D   B Y   P H U N T S H O  -----------*/
+.aspiration_video{
+	width: 50%;
+	padding: 30px;
+	margin: 0 auto;
+}
+
+/*---------  E N D  O F  C U S T O M   C S S   A D D E D   B Y   P H U N T S H O  -----------*/
 
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */
@@ -1638,6 +1646,9 @@ table a,
 
 	#copyright p:first-of-type {
 		margin-bottom: 10px;
+	}
+	.aspiration_video{
+		width: 100%;
 	}
 }
 
